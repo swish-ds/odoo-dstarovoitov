@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="sale.sale_menu_root" model="ir.ui.menu">
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_saleorder_inherit_test" inherit_id="sale.report_saleorder_document">
+        <!-- отображается в печатной форме Print > Quotation / Order, в любом месте над таблицей товаров -->
+        <xpath expr="//table[hasclass('o_main_table')]" position="before">
+            <div t-if="doc.test_field is not False">
+                <div>
+                    <span t-field="doc.test_field"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.inherit.test</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- В модуле Sale, который присутствует по умолчанию в Odoo в Quotations
+            вид form появляется новое текстовое поле «Test». -->
+            <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                <!-- Новое поле «Test» доступно для редактирования только если  Quotations на этапе Draft -->
+                <field name="test_field" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
